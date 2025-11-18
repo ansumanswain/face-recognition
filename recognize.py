@@ -4,14 +4,14 @@ import cv2
 import numpy as np
 from keras.models import load_model
 
-classifier = cv2.CascadeClassifier(r'C:/Users/ansum/Downloads/13th October 2025 AIML/Face_Recognition/Face_Recognition/haarcascade_frontalface_default (1).xml')
+classifier = cv2.CascadeClassifier(r'haarcascade_frontalface_default (1).xml')     #copy absolute path
 
-model = load_model(r"C:/Users/ansum/Downloads/13th October 2025 AIML/Face_Recognition/Face_Recognition/final_model.h5")
+model = load_model(r"final_model.h5")                                              #copy abosulte path
 
-URL = 'http://10.148.162.89:8080/shot.jpg'
+URL = 'http://10.00.00.00:8080/shot.jpg'                                           #your ip webcam address here
 
 def get_pred_label(pred):
-    labels = ['Ansuman', 'Binay', 'Pratik']
+    labels = ['labels']                                                            #names here 
     return labels[pred]
 
 def preprocess(img):
@@ -45,4 +45,5 @@ while ret:
         break
 
 cv2.destroyAllWindows()
+
 
