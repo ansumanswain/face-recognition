@@ -4,10 +4,10 @@ import numpy as np             # For array operations
 
 # Load the Haarcascade face detection model
 # This file helps OpenCV identify human faces in an image
-classifier = cv2.CascadeClassifier(r"C:/Users/ansum/Downloads/13th October 2025 AIML/Face_Recognition/Face_Recognition/haarcascade_frontalface_default (1).xml")
+classifier = cv2.CascadeClassifier(r"haarcascade_frontalface_default (1).xml")   # copy as path
 
 # IP Webcam link (from your mobile camera app)
-url = "http://10.148.162.89:8080/shot.jpg"
+url = "http://10.00.100.00:8080/shot.jpg"                                        # your ip webcam address here
 
 # List to store the 100 captured face images
 data = []
@@ -69,3 +69,4 @@ if len(data) == 100:
     print("Done")
 else:
     print("Need more data")
+
